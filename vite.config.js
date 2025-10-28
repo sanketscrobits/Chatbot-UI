@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
   build: {
     lib: {
-      entry: 'src/widget.js',
+      entry: 'src/widget.jsx',
       name: 'ChatbotWidget',
       fileName: 'chatbot-widget',
       formats: ['iife'],
