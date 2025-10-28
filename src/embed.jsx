@@ -3,7 +3,11 @@ import ReactDOM from "react-dom/client";
 import FloatingChatbot from "./components/FloatingChatbot.jsx";
 import "./index.css";
 
-console.log("✅ Chatbot widget script loaded!");
+const cssLink = document.createElement("link");
+cssLink.rel = "stylesheet";
+cssLink.href = "https://chatbot-ui-chi-beryl.vercel.app/chatbot-widget.css"; 
+document.head.appendChild(cssLink);
+
 const widgetDiv = document.createElement("div");
 widgetDiv.id = "chatbot-widget-root";
 document.body.appendChild(widgetDiv);
