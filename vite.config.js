@@ -6,16 +6,16 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
   build: {
     lib: {
-      entry: 'src/widget.jsx',
+      entry: 'src/embed.jsx',
       name: 'ChatbotWidget',
       fileName: 'chatbot-widget',
       formats: ['iife'],
     },
     rollupOptions: {
-      output: {
-        assetFileNames: 'chatbot-widget.[ext]',
-      },
+      external: [],
     },
-    cssCodeSplit: false,
+  },
+  define: {
+    "process.env": {},
   },
 })

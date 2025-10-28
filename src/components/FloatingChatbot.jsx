@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 const API_URL =
   window.CHATBOT_API_URL ||
-  document.currentScript?.getAttribute("api-url") ||
+  document.currentScript?.getAttribute("api_url") ||
   "http://localhost:8000";
 
 const FloatingChatbot = () => {
@@ -29,7 +29,7 @@ const FloatingChatbot = () => {
     setIsLoading(true);
 
     try {
-      const res = await fetch(`${API_URL}/chatbot`, {
+      const res = await fetch(`${API_URL.replace(/\/$/, "")}/chatbot`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_message: userMessage.text }),
